@@ -28,7 +28,7 @@ export class WeatherService{
     }
 
     fetchWeatherCodes(): Observable<any> {
-        return this.http.get<any>('app/assets/WeatherCode/WeatherCode.json');
+        return this.http.get<any>('assets/WeatherCode/WeatherCode.json');
       }
     
 

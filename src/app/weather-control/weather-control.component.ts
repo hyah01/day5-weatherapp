@@ -13,8 +13,8 @@ export class WeatherControlComponent {
 
   fetchWeather(){
     if (this.location != ''){
-      //this.weatherService.fetchWeatherData(this.location);
-      this.weatherService.fetchTestData();
+      this.weatherService.fetchWeatherData(this.location);
+      //this.weatherService.fetchTestData();
     }
   }
 }
