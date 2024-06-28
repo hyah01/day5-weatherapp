@@ -1,16 +1,1 @@
-<div class="main-page">
-  <div class="title-container">
-    <h1>Weather App</h1>
-  </div>
-  <div class="search-bar">
-    <div>
-      <input  class="form-control mb-2" name="location" id="location" [(ngModel)]="location" placeholder="Enter location" />
-      <button (click)="fetchWeather()">Search</button>
-    </div>
-  </div>
-  <div class="weather-display">
-    <app-main-forcast></app-main-forcast>
-    <app-hourly-forecast></app-hourly-forecast>
-    <app-daily-forecast></app-daily-forecast>
-  </div>
-</div>
+<app-weather-control></app-weather-control>

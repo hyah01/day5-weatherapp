@@ -8,14 +8,5 @@ import { WeatherService } from './weatherapi.service';
 })
 export class AppComponent {
   title = 'day5-weatherapp';
-  location: string = '';
-  
-  constructor(private weatherService: WeatherService){}
 
-  fetchWeather(){
-    if (this.location != ''){
-      //this.weatherService.fetchWeatherData(this.location);
-      this.weatherService.fetchTestData();
-    }
-  }
 }

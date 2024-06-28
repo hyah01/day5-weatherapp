@@ -34,7 +34,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }, "src/app/weatherTest.json"
+              }, "src/app/weatherTest.json",
+              "src/app/assets",
+              "src/app/assets/WeatherIcon",
+              "src/app/assets/WeatherCode/WeatherCode.json"
             ],
             "styles": [
               "src/styles.css"

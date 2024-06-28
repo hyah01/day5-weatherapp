@@ -1,15 +1,12 @@
-<div *ngIf="weatherData">
-    <div>
-        <div>
-            <div *ngFor="let hourData of hourlyData">
+<div *ngIf="weatherData" class="container">
+    <div class="main-container">
+            <div *ngFor="let hourData of hourlyData" class="hourly-container">
                 <div class="hourly-weather">
                     <h1 >{{getFormattedTime(hourData)}}</h1>
                     <h2 >{{getTemperature(hourData)}}°</h2>     
                     <h2> {{getHumidity(hourData)}} </h2>
                     <h2> {{getWindSpeed(hourData)}} </h2>           
                 </div>
-
             </div>
-        </div>
     </div>
 </div>

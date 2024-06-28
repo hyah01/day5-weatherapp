@@ -9,13 +9,15 @@ import { HourlyForecastComponent } from './hourly-forecast/hourly-forecast.compo
 import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { DailyForecastComponent } from './daily-forecast/daily-forecast.component';
 import { MainForcastComponent } from './main-forcast/main-forcast.component';
+import { WeatherControlComponent } from './weather-control/weather-control.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HourlyForecastComponent,
     DailyForecastComponent,
-    MainForcastComponent
+    MainForcastComponent,
+    WeatherControlComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { WeatherService } from '../weatherapi.service';
 export class DailyForecastComponent implements OnInit{
   weatherData: any;
   dailyData: any;
+  weatherCode: any;
 
   constructor(private weatherService: WeatherService){}
 
@@ -17,6 +18,11 @@ export class DailyForecastComponent implements OnInit{
         if (data){
           this.weatherData = data;
           this.dailyData = this.weatherData.timelines.daily;
+          this.weatherService.fetchWeatherCodes().subscribe(data => {
+            if (data){
+              this.weatherCode = data;
+            }
+          })
         }
       })
   }
@@ -44,8 +50,15 @@ export class DailyForecastComponent implements OnInit{
     return Math.round(dayData.values.temperatureAvg)
   }
 
-  getWeatherCode(dayData: any){
-    return dayData.values.weatherCodeMax;
+
+
+  getWeather(dayData: any){
+    if (dayData && this.weatherCode){
+      return this.weatherCode.weatherCode[dayData.values.weatherCodeMax];
+    } 
+    return '';
   }
+
+
 
 }

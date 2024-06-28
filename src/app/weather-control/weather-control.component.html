@@ -1,0 +1,17 @@
+<div class="main-page">
+    <div class="title-container">
+        <h1>Weather App</h1>
+        <img src="/WeatherIcon/Powered_by_Tomorrow-White.svg">
+    </div>
+    <div class="search-bar">
+      <div>
+        <input  class="form-control" name="location" id="location" [(ngModel)]="location" placeholder="Enter location" />
+        <button (click)="fetchWeather()">Search</button>
+      </div>
+    </div>
+    <div class="weather-display">
+      <app-main-forcast></app-main-forcast>
+      <app-hourly-forecast></app-hourly-forecast>
+      <app-daily-forecast></app-daily-forecast>
+    </div>
+  </div>

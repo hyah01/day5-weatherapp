@@ -1,7 +1,7 @@
-<div>
-    <div>
+<div *ngIf="weatherData" class="container">
+    <div class="main-container">
         <h2>{{dataName}}</h2>
-        <h1>{{currTemp}}</h1>
-        <h3>{{curWeatherCode}}</h3>
+        <h1>{{currTemp}}°</h1>
+        <h3>{{getWeather()}}</h3>
     </div>
 </div>

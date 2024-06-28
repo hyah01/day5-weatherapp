@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { environment } from "./environment";
 import { Injectable } from "@angular/core";
 
@@ -9,6 +9,7 @@ import { Injectable } from "@angular/core";
 export class WeatherService{
     private weatherDataSubject = new BehaviorSubject<any>(null);
     weatherData = this.weatherDataSubject.asObservable();
+    weatherCode: any;
     private apiUrl = '';
 
     constructor(private http: HttpClient){}
@@ -25,6 +26,10 @@ export class WeatherService{
             this.weatherDataSubject.next(data)
         })
     }
+
+    fetchWeatherCodes(): Observable<any> {
+        return this.http.get<any>('app/assets/WeatherCode/WeatherCode.json');
+      }
     
 
 }

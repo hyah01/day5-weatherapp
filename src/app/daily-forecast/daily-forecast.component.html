@@ -1,11 +1,11 @@
-<div *ngIf="weatherData">
-    <div class="daily-container">
-        <div *ngFor="let dayData of dailyData">
-            <div class="item">
+<div *ngIf="weatherData" class="container">
+    <div class="main-container">
+        <div *ngFor="let dayData of dailyData" class="daily-container">
+            <div class="daily-weather">
                 <h1>{{getDate(dayData)}}</h1>
                 <h1>{{getDay(dayData)}}</h1>
-                <h2>{{getTemperature(dayData)}}</h2>
-                <h2>{{getWeatherCode(dayData)}}</h2>
+                <h2>{{getTemperature(dayData)}}°</h2>
+                <h2>{{getWeather((dayData))}}</h2>
             </div>
         </div>
 

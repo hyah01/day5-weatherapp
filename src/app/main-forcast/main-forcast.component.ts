@@ -11,6 +11,7 @@ export class MainForcastComponent implements OnInit{
   dataName: any;
   currTemp: any;
   curWeatherCode: any;
+  weatherCode: any;
 
   constructor(private weatherService: WeatherService){}
 
@@ -21,8 +22,20 @@ export class MainForcastComponent implements OnInit{
           this.dataName = this.weatherData.location.name.split(",")[0];
           this.currTemp = Math.round(this.weatherData.timelines.hourly.slice(0,1)[0].values.temperatureApparent);
           this.curWeatherCode = this.weatherData.timelines.hourly.slice(0,1)[0].values.weatherCode;
+          this.weatherService.fetchWeatherCodes().subscribe(data => {
+            if (data){
+              this.weatherCode = data;
+            }
+          })
         }
       })
+  }
+
+  getWeather(){
+    if (this.weatherCode){
+      return this.weatherCode.weatherCode[this.curWeatherCode];
+    } 
+    return '';
   }
 
 }
