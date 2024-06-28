@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WeatherService } from './weatherapi.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'day5-weatherapp';
+  location: string = '';
+  
+  constructor(private weatherService: WeatherService){}
+
+  fetchWeather(){
+    if (this.location != ''){
+      //this.weatherService.fetchWeatherData(this.location);
+      this.weatherService.fetchTestData();
+    }
+  }
 }
