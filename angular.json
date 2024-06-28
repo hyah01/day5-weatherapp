@@ -34,7 +34,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              }, "src/app/weatherTest.json"
             ],
             "styles": [
               "src/styles.css"
@@ -107,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
