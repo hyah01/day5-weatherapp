@@ -13,6 +13,7 @@ export class HourlyForecastComponent implements OnInit{
 
   constructor(private weatherService: WeatherService){}
 
+  // Load Data when data is updated
   ngOnInit(): void {
       this.weatherService.weatherData.subscribe(data => {
         if (data){
@@ -27,6 +28,7 @@ export class HourlyForecastComponent implements OnInit{
       })
   }
 
+  // format Time and period of time based on current time
   getFormattedTime(hourData: any){
     if (hourData){
       const hours = (parseInt(hourData.time.slice(11,13)) + 16) % 12 + 1;
@@ -64,7 +66,7 @@ export class HourlyForecastComponent implements OnInit{
     return '';
   }
 
-
+  // load image src based on weather code
   getImageURL(code: any){
     let images: { [key: string]: string } = {
       "Sunny": "./assets/WeatherIcon/1000_Clear_Sunny.png",
@@ -91,7 +93,7 @@ export class HourlyForecastComponent implements OnInit{
       "Light Ice Pellets": "./assets/WeatherIcon/7102_Ice_Pellets_Light.png",
       "Thunderstorm": "./assets/WeatherIcon/8000_Lightning_Storm.png"
     };
-    
+
     return images[code];
 
   }

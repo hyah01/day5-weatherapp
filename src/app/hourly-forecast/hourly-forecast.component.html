@@ -3,12 +3,18 @@
             <div *ngFor="let hourData of hourlyData" class="hourly-container">
                 <div class="hourly-weather">
                     <h1 >{{getFormattedTime(hourData)}}</h1>
-                    <h2 >{{getTemperature(hourData)}}°</h2>     
+                    <div class="flex">
+                        <img src="./assets/WeatherIcon/temperature.png" width="25" height="25"/>
+                        <h2 >{{getTemperature(hourData)}}°</h2>  
+                    </div>   
                     <div class="flex">
                         <img src="./assets/WeatherIcon/humitity.png" width="25" height="25">
                         <h2> {{getHumidity(hourData)}} </h2>
                     </div>
-                    <h2> {{getWindSpeed(hourData)}} </h2>
+                    <div class="flex">
+                        <img src="./assets/WeatherIcon/windspeed.png" width="25" height="25"/>
+                        <h2> {{getWindSpeed(hourData)}} </h2>
+                    </div>
                     <img src="{{getImageURL(getWeather(hourData))}}">           
                 </div>
             </div>

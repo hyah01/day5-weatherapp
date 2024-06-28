@@ -13,6 +13,7 @@ export class DailyForecastComponent implements OnInit{
 
   constructor(private weatherService: WeatherService){}
 
+  // Load Data when data is updated
   ngOnInit(): void {
       this.weatherService.weatherData.subscribe(data => {
         if (data){
@@ -27,6 +28,7 @@ export class DailyForecastComponent implements OnInit{
       })
   }
 
+  // get current date
   getDate(dayData: any){
     if (dayData){
       const day = dayData.time.slice(5,10).replace("-","/");
@@ -35,6 +37,7 @@ export class DailyForecastComponent implements OnInit{
     return '';
   }
 
+  // get the day of the week
   getDay(dayData: any){
     if (dayData){
       const daysOfWeek = [
@@ -46,12 +49,12 @@ export class DailyForecastComponent implements OnInit{
     return '';
   }
 
+  // get temperature
   getTemperature(dayData: any){
     return Math.round(dayData.values.temperatureAvg)
   }
 
-
-
+  // get the weather condition
   getWeather(dayData: any){
     if (dayData && this.weatherCode){
       return this.weatherCode.weatherCode[dayData.values.weatherCodeMax];
