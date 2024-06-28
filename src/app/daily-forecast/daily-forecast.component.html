@@ -1,1 +1,13 @@
-<p>daily-forecast works!</p>
+<div *ngIf="weatherData">
+    <div class="daily-container">
+        <div *ngFor="let dayData of dailyData">
+            <div class="item">
+                <h1>{{getDate(dayData)}}</h1>
+                <h1>{{getDay(dayData)}}</h1>
+                <h2>{{getTemperature(dayData)}}</h2>
+                <h2>{{getWeatherCode(dayData)}}</h2>
+            </div>
+        </div>
+
+    </div>
+</div>

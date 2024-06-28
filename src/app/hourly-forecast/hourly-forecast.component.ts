@@ -31,7 +31,24 @@ export class HourlyForecastComponent implements OnInit{
   }
 
   getTemperature(hourData: any){
-    return Math.round(hourData.values.temperatureApparent)
+    if (hourData){
+      return Math.round(hourData.values.temperatureApparent)
+    }
+    return ''
+  }
+
+  getHumidity(hourData: any){
+    if (hourData){
+      return hourData.values.humidity;
+    }
+    return ''
+  }
+
+  getWindSpeed(hourData: any){
+    if (hourData){
+      return hourData.values.windSpeed;
+    }
+    return ''
   }
 
 
